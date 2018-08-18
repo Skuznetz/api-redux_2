@@ -17,7 +17,7 @@ const LANGUAGES = [
     'c',
     'shell',
     'objective-c',
-    'go',
+    'ruby',
     'perl'
 ];
 
