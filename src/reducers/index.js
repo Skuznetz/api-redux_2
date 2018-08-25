@@ -1,6 +1,6 @@
 import {RECEIVE_USERS} from '../actions';
 
-const users = (state = {isFetching: false,items: [] }) =>{
+const users = (state = {isFetching: false,items: [] },action) =>{
     switch (action.type){
         case RECEIVE_USERS: {
             return {
