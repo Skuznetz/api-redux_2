@@ -5,5 +5,7 @@ export const RECEIVE_USERS = 'RECEIVE_USERS';
 
 export const fetchUsers = language =>dispatch => {
     return api.getPopularUsersByLanguage(language)
-    .then(data => console.log(data));
+    .then(data => dispatch({
+        type: RECEIVE_USERS,
+        users: data.items}));
 }
