@@ -10,5 +10,7 @@ class AppContainer extends Component {
         return <h1>Привет</h1>;
     }
 }
-
-export default connect(null, {fetchUsers})(AppContainer);
+const mapStateToProps = state => ({
+    users: state.items
+});
+export default connect(mapStateToProps, {fetchUsers})(AppContainer);
