@@ -13,7 +13,8 @@ export function getPopularUsersByLanguage(language) {
         order: 'desc'
     };
 
-    return axios.get(`${API_PREFIX}/search/users`, { params });
+    return axios.get(`${API_PREFIX}/search/users`, { params })
+           .then(response => response.data);
 }
 
 export default {
