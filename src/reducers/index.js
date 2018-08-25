@@ -5,7 +5,10 @@ const users = (state = {isFetching: false,items: [] }) =>{
                 ...state,
                 isFetching:false,
                 items: action.users
-            }
+            };
+        }
+        default: {
+            return state;
         }
     }
 }
