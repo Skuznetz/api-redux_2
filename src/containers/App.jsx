@@ -9,15 +9,17 @@ class AppContainer extends Component {
         this.props.fetchUsers('javascript');
     }
     render() {
-        const {users} = this.props;
+        const {users,isFetching} = this.props;
         return (
             <div>
-                <UserList users={users} />
+                {isFetching ? 'Loading ... ' : 
+                <UserList users={users} /> }
             </div>
         );
     }
 }
 const mapStateToProps = state => ({
-    users: state.items
+    users: state.items,
+    isFetching: state.isFetching
 });
 export default connect(mapStateToProps, {fetchUsers})(AppContainer);
