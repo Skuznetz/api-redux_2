@@ -1,3 +1,5 @@
+import {RECEIVE_USERS} from '../actions';
+
 const users = (state = {isFetching: false,items: [] }) =>{
     switch (action.type){
         case RECEIVE_USERS: {
@@ -13,4 +15,4 @@ const users = (state = {isFetching: false,items: [] }) =>{
     }
 }
 
-export default (state = {},action) => state;
+export default users;
