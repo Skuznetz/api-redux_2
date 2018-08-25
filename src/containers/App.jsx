@@ -2,12 +2,19 @@ import React,{Component} from 'react';
 import { connect } from 'react-redux';
 
 import { fetchUsers } from '../actions';
+
+import UserList from '../components/UserList.jsx'
 class AppContainer extends Component {
     componentDidMount(){
         this.props.fetchUsers('javascript');
     }
     render() {
-        return <h1>Привет</h1>;
+        const {users} = this.props;
+        return (
+            <div>
+                <UserList users={users} />
+            </div>
+        );
     }
 }
 const mapStateToProps = state => ({
