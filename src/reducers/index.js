@@ -20,5 +20,16 @@ const users = (state = {isFetching: false,items: [] },action) =>{
         }
     }
 }
+const language = (state ='javascript',action)=>{
+    switch (action.type){
+        case SELECT_LANGUAGE: {
+            return action.language
+        }
+        default: {
+            return state
+        
+        }
+    }
+};
 
 export default users;
