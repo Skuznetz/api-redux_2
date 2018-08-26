@@ -5,6 +5,8 @@ import { fetchUsers } from '../actions';
 
 import UserList from '../components/UserList.jsx';
 import Picker from '../components/Picker.jsx';
+
+const LANGUAGES = ['javascript','go','perl','ruby','php']
 class AppContainer extends Component {
     componentDidMount(){
         this.props.fetchUsers(this.props.language);
