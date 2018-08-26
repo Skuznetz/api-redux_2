@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 import { fetchUsers } from '../actions';
 
-import UserList from '../components/UserList.jsx'
+import UserList from '../components/UserList.jsx';
+import Picker from '../components/Picker.jsx';
 class AppContainer extends Component {
     componentDidMount(){
         this.props.fetchUsers('javascript');
