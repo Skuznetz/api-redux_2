@@ -21,7 +21,8 @@ class AppContainer extends Component {
     }
 }
 const mapStateToProps = state => ({
-    users: state.items,
-    isFetching: state.isFetching
+    users: state.users.items,
+    isFetching: state.users.isFetching,
+    language: state.language
 });
 export default connect(mapStateToProps, {fetchUsers})(AppContainer);
