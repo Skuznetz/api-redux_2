@@ -1,5 +1,5 @@
 import {RECEIVE_USERS,REQUEST_USERS,SELECT_LANGUAGE} from '../actions';
-
+import {combineReducers} from 'redux';
 const users = (state = {isFetching: false,items: [] },action) =>{
     switch (action.type){
         case REQUEST_USERS: {
