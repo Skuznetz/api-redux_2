@@ -10,10 +10,12 @@ class AppContainer extends Component {
         this.props.fetchUsers('javascript');
     }
     render() {
-        const {users,isFetching} = this.props;
+        const {users,language,isFetching} = this.props;
         return (
             <div>
-                <Picker options = {LANGUAGE} />
+                <Picker 
+                value={language}
+                options = {LANGUAGE} />
                 {isFetching ? 'Loading ... ' : 
                 <UserList users={users} /> }
             </div>
