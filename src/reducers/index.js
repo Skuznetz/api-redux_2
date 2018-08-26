@@ -32,4 +32,4 @@ const language = (state ='javascript',action)=>{
     }
 };
 
-export default users;
+export default combineReducers({users,language});
