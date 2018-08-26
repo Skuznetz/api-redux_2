@@ -7,7 +7,7 @@ import UserList from '../components/UserList.jsx';
 import Picker from '../components/Picker.jsx';
 class AppContainer extends Component {
     componentDidMount(){
-        this.props.fetchUsers('javascript');
+        this.props.fetchUsers(this.props.language);
     }
     render() {
         const {users,language,isFetching} = this.props;
