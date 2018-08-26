@@ -1,4 +1,4 @@
-import {RECEIVE_USERS,REQUEST_USERS} from '../actions';
+import {RECEIVE_USERS,REQUEST_USERS,SELECT_LANGUAGE} from '../actions';
 
 const users = (state = {isFetching: false,items: [] },action) =>{
     switch (action.type){
