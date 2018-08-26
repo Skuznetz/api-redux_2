@@ -17,7 +17,7 @@ class AppContainer extends Component {
             <div>
                 <Picker 
                 value={language}
-                options = {LANGUAGE} />
+                options = {LANGUAGES} />
                 {isFetching ? 'Loading ... ' : 
                 <UserList users={users} /> }
             </div>
