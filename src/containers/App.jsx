@@ -13,6 +13,7 @@ class AppContainer extends Component {
         const {users,isFetching} = this.props;
         return (
             <div>
+                <Picker options = {LANGUAGE} />
                 {isFetching ? 'Loading ... ' : 
                 <UserList users={users} /> }
             </div>
