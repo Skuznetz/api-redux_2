@@ -11,6 +11,9 @@ class AppContainer extends Component {
     componentDidMount(){
         this.props.fetchUsers(this.props.language);
     }
+    handleLanguageChange = language=>{
+        this.props.selectLanguage(language);
+    }
     componentWillReceiveProps(nextProps){
         if (this.propslanguage !==nextProps.language){
             this.props.fetchUsers(nextProps.language);
