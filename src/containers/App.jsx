@@ -15,7 +15,7 @@ class AppContainer extends Component {
         this.props.selectLanguage(language);
     }
     componentWillReceiveProps(nextProps){
-        if (this.propslanguage !==nextProps.language){
+        if (this.props.language !==nextProps.language){
             this.props.fetchUsers(nextProps.language);
         }
     }
