@@ -11,6 +11,11 @@ class AppContainer extends Component {
     componentDidMount(){
         this.props.fetchUsers(this.props.language);
     }
+    componentWillReceiveProps(nextProps){
+        if (this.propslanguage !==nextProps.language){
+            this.props.fetchUsers(nextProps.language);
+        }
+    }
     render() {
         const {users,language,isFetching} = this.props;
         return (
