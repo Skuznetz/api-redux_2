@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
 
-import { fetchUsers } from '../actions';
+import { fetchUsers,selectLanguage } from '../actions';
 
 import UserList from '../components/UserList.jsx';
 import Picker from '../components/Picker.jsx';
@@ -29,4 +29,4 @@ const mapStateToProps = state => ({
     isFetching: state.users.isFetching,
     language: state.language
 });
-export default connect(mapStateToProps, {fetchUsers})(AppContainer);
+export default connect(mapStateToProps, {fetchUsers,selectLanguage})(AppContainer);
