@@ -11,10 +11,12 @@ export const selectLanguage = language =>({
 
 export const fetchUsers = language =>dispatch => {
     dispatch({
+        language,
         type: REQUEST_USERS
     })
     return api.getPopularUsersByLanguage(language)
     .then(data => dispatch({
+        language,
         type: RECEIVE_USERS,
         users: data.items}));
 }
