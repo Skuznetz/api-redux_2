@@ -20,6 +20,22 @@ const users = (state = {isFetching: false,items: [] },action) =>{
         }
     }
 }
+ 
+const userByLanguage = (state ={},action) => {
+    switch (action.type) {
+        case REQUEST_USERS:
+        case RECEIVE_USERS: {
+            return {
+                ...State,
+                [action.language]: users(state[action.language],action)
+            };
+        }
+        default: {
+            return state;
+        }
+    }
+}
+
 const language = (state ='javascript',action)=>{
     switch (action.type){
         case SELECT_LANGUAGE: {
