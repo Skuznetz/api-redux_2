@@ -40,7 +40,7 @@ function getUsersByLanguage(state) {
 const mapStateToProps = state => {
     const users = getUsersByLanguage(state);
     return {
-        users: users.items,
+        users: users.items || [],
         isFetching: users.isFetching,
         language: state.language
     };
