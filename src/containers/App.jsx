@@ -43,6 +43,6 @@ const mapStateToProps = state => {
         users: users.items,
         isFetching: users.isFetching,
         language: state.language
-    }
+    };
 };
 export default connect(mapStateToProps, {fetchUsers,selectLanguage})(AppContainer);
