@@ -48,4 +48,4 @@ const language = (state ='javascript',action)=>{
     }
 };
 
-export default combineReducers({users,language});
+export default combineReducers({usersByLanguage,language});
