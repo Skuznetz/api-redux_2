@@ -21,7 +21,7 @@ const users = (state = {isFetching: false,items: [] },action) =>{
     }
 }
  
-const userByLanguage = (state ={},action) => {
+const usersByLanguage = (state ={},action) => {
     switch (action.type) {
         case REQUEST_USERS:
         case RECEIVE_USERS: {
