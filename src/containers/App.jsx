@@ -38,9 +38,10 @@ function getUsersByLanguage(state) {
     return state.usersByLanguage[state.language] || {};
 }
 const mapStateToProps = state => {
+    const users = getUsersByLanguage(state);
     return {
-        users: state.users.items,
-        isFetching: state.users.isFetching,
+        users: users.items,
+        isFetching: users.isFetching,
         language: state.language
     }
 };
