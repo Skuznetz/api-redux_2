@@ -34,8 +34,8 @@ class AppContainer extends Component {
     }
 }
 const mapStateToProps = state => ({
-    users: state.users.items,
-    isFetching: state.users.isFetching,
+    users: state.usersByLanguage.items,
+    isFetching: state.ByLanguage.isFetching,
     language: state.language
 });
 export default connect(mapStateToProps, {fetchUsers,selectLanguage})(AppContainer);
