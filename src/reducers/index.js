@@ -26,7 +26,7 @@ const usersByLanguage = (state ={},action) => {
         case REQUEST_USERS:
         case RECEIVE_USERS: {
             return {
-                ...State,
+                ...state,
                 [action.language]: users(state[action.language],action)
             };
         }
