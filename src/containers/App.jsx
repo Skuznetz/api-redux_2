@@ -9,14 +9,14 @@ import Picker from '../components/Picker.jsx';
 const LANGUAGES = ['javascript','go','perl','ruby','php','java','python','css','html']
 class AppContainer extends Component {
     componentDidMount(){
-        this.props.fetchUsers(this.props.language);
+        this.props.fetchUsersIfNeeded(this.props.language);
     }
     handleLanguageChange = language=>{
         this.props.selectLanguage(language);
     }
     componentWillReceiveProps(nextProps){
         if (this.props.language !==nextProps.language){
-            this.props.fetchUsers(nextProps.language);
+            this.props.fetchUsersIfNeeded(nextProps.language);
         }
     }
     render() {
@@ -45,4 +45,4 @@ const mapStateToProps = state => {
         language: state.language
     };
 };
-export default connect(mapStateToProps, {fetchUsers,selectLanguage})(AppContainer);
+export default connect(mapStateToProps, {fetchUsersIfNeeded,selectLanguage})(AppContainer);
