@@ -21,12 +21,13 @@ export const fetchUsers = language =>dispatch => {
         users: data.items}));
 }
 
-const shouldFetchUsers = (state,language){
+const shouldFetchUsers = (state,language)=>{
     const users = state.usersByLanguage[language];
     if (users) {
         return false;
     }
     return true;
+
 }
     export const fetchUsersIfNeeded = language => {
         if (shouldFetchUsers(getState(),language)){
