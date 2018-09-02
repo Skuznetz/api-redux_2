@@ -20,6 +20,14 @@ export const fetchUsers = language =>dispatch => {
         type: RECEIVE_USERS,
         users: data.items}));
 }
+
+const shouldFetchUsers = (state,language){
+    const users = state.usersByLanguage[language];
+    if (users) {
+        return false;
+    }
+    return true;
+}
     export const fetchUsersIfNeeded = language => {
         if (shouldFetchUsers(getState(),language)){
             return dispatchEvent(fitchUsers(language))
