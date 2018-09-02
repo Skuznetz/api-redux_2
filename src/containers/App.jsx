@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
 
-import { fetchUsers,selectLanguage } from '../actions';
+import { fetchUsersIfNeeded,selectLanguage } from '../actions';
 
 import UserList from '../components/UserList.jsx';
 import Picker from '../components/Picker.jsx';
