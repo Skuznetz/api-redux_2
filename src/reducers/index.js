@@ -1,6 +1,6 @@
 import {RECEIVE_USERS,REQUEST_USERS,SELECT_LANGUAGE} from '../actions';
 import {combineReducers} from 'redux';
-const users = (state = {isFetching: false,items: [] },action) =>{
+const users = (state = {isFetching: false,items: [],fetchedAt: 0 },action) =>{
     switch (action.type){
         case REQUEST_USERS: {
             return {
@@ -12,7 +12,8 @@ const users = (state = {isFetching: false,items: [] },action) =>{
             return {
                 ...state,
                 isFetching:false,
-                items: action.users
+                items: action.users,
+                fetchedAt: action.fetchedAt
             };
         }
         default: {
