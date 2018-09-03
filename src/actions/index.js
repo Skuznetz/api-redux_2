@@ -29,8 +29,10 @@ const shouldFetchUsers = (state,language)=>{
     return true;
 
 }
-    export const fetchUsersIfNeeded = language => {
+    export const fetchUsersIfNeeded = language => 
+        (dispatch,getState)=>{
         if (shouldFetchUsers(getState(),language)){
-            return dispatchEvent(fitchUsers(language))
+            return dispatch(fetchUsers(language));
         }
     }
+    
