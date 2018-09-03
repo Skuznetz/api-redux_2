@@ -18,12 +18,14 @@ export const fetchUsers = language =>dispatch => {
     .then(data => dispatch({
         language,
         type: RECEIVE_USERS,
-        users: data.items}));
+        users: data.items,
+        fetchedAt: Date.now()}));
 }
 
+const INVALIDATION_TIME = 40000;
 const shouldFetchUsers = (state,language)=>{
     const users = state.usersByLanguage[language];
-    if (users) {
+    if (users && Date.now() - users.fetchedAt < INVALIDATION_TIME) {
         return false;
     }
     return true;
